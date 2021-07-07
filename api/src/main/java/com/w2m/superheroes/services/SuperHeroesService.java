@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface SuperHeroesService {
     public List select(String id, String nombre);
-    public String delete(String id);
+    public String delete(Integer id);
     public String update(SuperHeroeDTO superHeroeDTO);
 }

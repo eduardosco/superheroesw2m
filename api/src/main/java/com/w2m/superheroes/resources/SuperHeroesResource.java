@@ -40,7 +40,7 @@ public class SuperHeroesResource {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json;charset=UTF-8")
     @TrackExecutionTime
-    public String delete(@PathVariable String id){
+    public String delete(@PathVariable Integer id){
         return this.superHeroesService.delete(id);
     }
 }

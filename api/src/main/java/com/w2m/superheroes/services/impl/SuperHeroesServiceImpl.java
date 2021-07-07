@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.cache.annotation.Cacheable;
+
 import org.springframework.stereotype.Service;
 
 @Service("superHeroesService")
@@ -21,17 +23,20 @@ public class SuperHeroesServiceImpl implements SuperHeroesService {
     private SuperHeroesMapper superHeroesMapper;
 
     @Override
+    @Cacheable(cacheNames="headers")
     public List select(String id, String nombre){
         return this.superHeroesMapper.select(id, nombre);
     }
 
     @Override
-    public String delete(String id){
-    	this.superHeroesMapper.delete(Integer.parseInt(id));
+    @Cacheable(cacheNames="headers")
+    public String delete(Integer id){
+    	this.superHeroesMapper.delete(id);
     	return "Success";
     }
 
     @Override
+    @Cacheable(cacheNames="headers")
 	public String update(SuperHeroeDTO superHeroeDTO){
 		this.superHeroesMapper.update(superHeroeDTO);
 		return "Success";
