@@ -15,28 +15,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.w2m.superheroes.advice.TrackExecutionTime;
+
 @RestController
 @RequestMapping("/superheroes")
 public class SuperHeroesResource {
 
     @Autowired
-    SuperHeroesService superHeroesService; 
+    private SuperHeroesService superHeroesService; 
 
     @RequestMapping(method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    @TrackExecutionTime
     public List select(
 		@RequestParam(required=false) String id,
     	@RequestParam(required=false) String partNombre){
         return this.superHeroesService.select(id, partNombre);
     }
 
-    @SuppressWarnings("rawtypes")
     @RequestMapping(method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
+    @TrackExecutionTime
     public String update(@RequestBody SuperHeroeDTO superHeroeDTO){
         return this.superHeroesService.update(superHeroeDTO);
     }
 
-    @SuppressWarnings("rawtypes")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "application/json;charset=UTF-8")
+    @TrackExecutionTime
     public String delete(@PathVariable String id){
         return this.superHeroesService.delete(id);
     }
