@@ -2,11 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.w2m.superheroes.mapper.SuperHeroesMapper">
 
-    <select id="select" resultType="hashmap">
+    <select id="select" resultMap="dto">
         select *
         from superheroes.superheroes
+        <if test="id != null">
+            where id = #{id}
+        </if>
         <if test="nombre != null">
             where nombre like '%${nombre}%'
         </if>
     </select>
+
+    <select id="update" resultType="hashmap">
+    	update superheroes.superheroes
+    	set nombre = #{dto.nombre},
+			genero = #{dto.genero}
+    	where id = #{dto.id}
+    </select>
+
+    <select id="delete" resultType="hashmap">
+    	delete from superheroes.superheroes where id = #{id}
+    </select>
+
+    <resultMap id="dto" type="com.w2m.superheroes.dto.SuperHeroeDTO">
+        <id property="id" column="id"/>
+        <result property="nombre" column="nombre"/>
+        <result property="genero" column="genero"/>
+    </resultMap>
 </mapper>
