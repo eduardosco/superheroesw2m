@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "eeb9e9c5-b466-4b09-859b-31ca93f61f99",
+		"name": "Superheroes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "selectAll",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/superheroesw2m/superheroes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"superheroesw2m",
+						"superheroes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "selectById",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/superheroesw2m/superheroes?id=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"superheroesw2m",
+						"superheroes"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "selectByPartName",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/superheroesw2m/superheroes?partNombre=man",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"superheroesw2m",
+						"superheroes"
+					],
+					"query": [
+						{
+							"key": "partNombre",
+							"value": "man"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Batgirl\",\r\n    \"genero\": \"Mujer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/superheroesw2m/superheroes",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"superheroesw2m",
+						"superheroes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteById",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/superheroesw2m/superheroes/40",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"superheroesw2m",
+						"superheroes",
+						"40"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
