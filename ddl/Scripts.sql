@@ -4,6 +4,8 @@ CREATE TABLE IF NOT EXISTS superheroes.superheroes(
 	id int not null,
 	nombre varchar(50) not null unique,
 	genero varchar(50) not null,
+	fechaCreacion TIMESTAMP AS CURRENT_TIMESTAMP,
+	fechaModificacion TIMESTAMP AS CURRENT_TIMESTAMP,
 	primary key(id)
 );
 insert into superheroes.superheroes (id, nombre, genero)

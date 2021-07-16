@@ -278,3 +278,216 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/eco/repos
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
 	... 99 more
+2021-07-16 10:29:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS SUPERHEROES.SUPERHEROES(
+	ID INT NOT NULL,
+	NOMBRE VARCHAR(50) NOT NULL UNIQUE,
+	GENERO VARCHAR(50) NOT NULL,
+	FECHACREACION TIMESTAMP AS CURRENT_TIMESTAMP
+	PRIMARY KEY([*]ID)
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS superheroes.superheroes(
+	id int not null,
+	nombre varchar(50) not null unique,
+	genero varchar(50) not null,
+	fechaCreacion TIMESTAMP AS CURRENT_TIMESTAMP
+	primary key(id)
+) [42001-192]
+2021-07-16 10:29:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Sequence "SUPERHEROE_SEQ" already exists; SQL statement:
+create sequence superheroes.superheroe_seq [90035-192]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.ddl.CreateSequence.update(CreateSequence.java:57)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:98)
+	at org.h2.command.Command.executeUpdate(Command.java:258)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:184)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS SUPERHEROES.SUPERHEROES(
+	ID INT NOT NULL,
+	NOMBRE VARCHAR(50) NOT NULL UNIQUE,
+	GENERO VARCHAR(50) NOT NULL,
+	FECHACREACION TIMESTAMP AS CURRENT_TIMESTAMP,,[*]
+	FECHAMODIFICACION TIMESTAMP AS CURRENT_TIMESTAMP,
+	PRIMARY KEY(ID)
+) "; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXISTS superheroes.superheroes(
+	id int not null,
+	nombre varchar(50) not null unique,
+	genero varchar(50) not null,
+	fechaCreacion TIMESTAMP AS CURRENT_TIMESTAMP,,
+	fechaModificacion TIMESTAMP AS CURRENT_TIMESTAMP,
+	primary key(id)
+) [42001-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Ant-Man', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Aquaman', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Asterix', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'The Atom', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Batgirl', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Batman', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Batwoman', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Black Canary', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Black Panther', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Captain America', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Captain Marvel', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Catwoman', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Conan the Barbarian', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Daredevil', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Doc Savage', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Doctor Strange', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Elektra', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Ghost Rider', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Green Arrow', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Green Lantern', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Hawkeye', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Hellboy', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Incredible Hulk', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Iron Fist', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Iron Man', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Marvelman', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Robin', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'The Rocketeer', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'The Shadow', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Spider-Man', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Sub-Mariner', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Supergirl', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Superman', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Thor', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'The Wasp', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Watchmen', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Wolverine', 'Hombre') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Wonder Woman', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Zatanna', 'Mujer') [42102-192]
+2021-07-16 10:29:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+insert into superheroes.superheroes (id, nombre, genero)
+values (nextval('superheroes.superheroe_seq'), 'Zatara', 'Mujer') [42102-192]
+2021-07-16 10:29:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "SUPERHEROES" not found; SQL statement:
+drop table superheroes.superheroes [42102-192]

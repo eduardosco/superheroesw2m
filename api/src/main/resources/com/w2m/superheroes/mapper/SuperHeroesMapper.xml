@@ -14,14 +14,25 @@
     </select>
 
     <select id="update" resultType="hashmap">
-    	update superheroes.superheroes
-    	set nombre = #{dto.nombre},
-			genero = #{dto.genero}
-    	where id = #{dto.id}
+        <if test="dto.id != null">
+            <if test="dto.nombre !=null || dto.genero !=null">
+            	update superheroes.superheroes
+            	set fechaModificacion = CURRENT_TIMESTAMP
+                <if test="dto.nombre !=null">
+                    , nombre = #{dto.nombre}
+                </if>
+                <if test="dto.genero !=null">
+                    , genero = #{dto.genero}
+                </if>
+            	where id = #{dto.id}
+            </if>
+        </if>
     </select>
 
     <select id="delete" resultType="hashmap">
-    	delete from superheroes.superheroes where id = #{id}
+        <if test="id != null">
+        	delete from superheroes.superheroes where id = #{id}
+        </if>
     </select>
 
     <resultMap id="dto" type="com.w2m.superheroes.dto.SuperHeroeDTO">
